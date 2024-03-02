@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Virbox VPN login{% endblock %}
+{% block content %}
+<h2>Login</h2>
+
+<p>Insert your "username:password" pair below:</p>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<input name="token" id="token" type="password" placeholder="1A2b3c4d:0123456789ABCDEF" size="25" maxlength="25">
+	<button type="submit" class="btn">Login</button>
+</form>
+{% endblock %}

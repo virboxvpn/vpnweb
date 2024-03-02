@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Virbox VPN{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="shortcut icon" href="https://virbox.net/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="{% static 'main/style.css' %}">
+<body>
+<div class="container">
+<div class="header">
+<div class="logo">
+<h1><a href="/">Virbox VPN</a></h1>
+<p><i class="tagline">VPN with no false advertising</i></p>
+</div>
+{% if request.COOKIES.coupon %}
+<p>Active coupon: <span class="coupon">{{ request.COOKIES.coupon }}</span> <small><a href="{% url 'coupon-clear' %}">cancel</a></small></p>
+{% endif %}
+{% include "nav.html" %}
+</div>
+
+{% if messages %}
+{% for message in messages %}
+<p class="msg-{{message.tags }}">{{ message }}</p>
+{% endfor %}
+{% endif %}
+{% block content %}{% endblock content %}
+<br>
+<p>Contact us: <a href="mailto:support@virbox.net">support@virbox.net</a></p>
+</div>
+</body>
+</head>
+</html>

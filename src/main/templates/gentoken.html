@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Generate new account</h2>
+
+<form method="POST" action="">
+	{% csrf_token %}
+	<p>You will receive a username:password pair, which is used to access your account. Store it in a secure place as we don't have "password reset" procedure.</p>
+    <button type="submit" class="btn">Generate New Account</button>
+	<p>No email required.</p>
+</form>
+
+{% endblock %}

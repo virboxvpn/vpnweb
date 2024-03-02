@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}View invoice{% endblock %}
+{% block content %}
+<h2>Invoice #{{ invoice.payment_id.hex }} for {{ user.username }}</h2>
+<p>To pay: {{ invoice.price_xmr }} XMR</p>
+<p>Pay to:</p>
+<p><mark>{{ invoice.address }}</mark></p>
+<p>Plan: ${{ invoice.plan.price_usd }} - {{ invoice.plan.days }}</p>
+<p>Status: {{ invoice.is_paid|yesno:"PAID,NOT PAID" }}</p>
+<p>Created at: {{ invoice.created_str }}</p>
+<p><i>Note: the invoice is active during the 48 hours after creation. After 48h, it is deleted regardless of payment status. The payments are processed automatically. For an invoice to be marked as "PAID", the transaction should pass at least 3 confirmations in the Monero blockchain. In case of any problems, please contact the support.</i></p>
+{% endblock %}

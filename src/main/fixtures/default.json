@@ -1,0 +1,10 @@
+[
+	{
+		"model": "main.Coupon",
+		"pk": 1,
+		"fields": {
+			"text": "DEFAULT",
+			"is_unlimited": true
+		}
+	}
+]
