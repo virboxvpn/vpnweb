@@ -150,7 +150,7 @@ CELERY_BEAT_SCHEDULE = {
     },
     "tick_balance": {
         "task": "main.tasks.tick_balance",
-        "schedule": crontab(minute=0, hour='*/12'),
+        "schedule": crontab(minute=0, hour="*/12"),
     },
 }
 
@@ -160,7 +160,7 @@ MONERO_PORT = 18008
 MONERO_WALLET_ADDR = Wallet(port=MONERO_PORT).address()
 MONERO_TX_CONFIRMATIONS = 3
 
-VPN_USERDIR = Path('/home/virbox/userdir/')
-VPN_USERZIP = Path('/home/virbox/userzip/')
+VPN_USERDIR = Path("/home/virbox/userdir/")
+VPN_USERZIP = Path("/home/virbox/userzip/")
 VPN_INVOICE_EXPIRE_AFTER = timedelta(days=2)
-VPN_ADMIN_PANEL_PREFIX = ''
+VPN_ADMIN_PANEL_PREFIX = ""

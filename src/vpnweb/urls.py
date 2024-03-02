@@ -20,6 +20,6 @@ from django.urls import path, include
 from django.conf import settings
 
 urlpatterns = [
-    path(settings.VPN_ADMIN_PANEL_PREFIX+"admin/", admin.site.urls),
+    path(settings.VPN_ADMIN_PANEL_PREFIX + "admin/", admin.site.urls),
     path("", include("main.urls")),
 ]
