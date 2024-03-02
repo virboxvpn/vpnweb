@@ -1,0 +1,103 @@
+body {
+	background-color: #1a1a1a;
+	color: white;
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+}
+body * {
+	font-family: monospace;
+}
+.container {
+	width: 60%;
+	margin: 50px auto 200px;
+	word-break: break-word;
+}
+.logo h1 {
+	color: #00ff00;
+	font-size: 2rem;
+	margin: 0;
+}
+.logo h1 {
+	text-decoration: none;
+}
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	border: 0;
+	font-weight: bold;
+	padding: 5px 10px;
+	background-color: #80ff00;
+}
+.btn:hover {
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+.btn-att {
+	padding: 10px 20px;
+	background-color: #FFD700;
+	border-radius: 5px;
+}
+a {
+	color: #00ff00;
+	text-decoration: none;
+}
+a:hover {
+	color: #ffff00;
+}
+.tagline {
+	color: #ccc;
+}
+.center {
+	text-align: center;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1rem;
+	word-break: normal;
+}
+.header * {
+	margin: 0;
+}
+.coupon {
+	animation: blink 5s infinite;
+}
+
+@keyframes blink {
+0% {
+	color: #0080ff;
+}
+50% {
+	color: #ff8000;
+}
+100% {
+	color: #0080ff;
+}
+}
+mark {
+	color: yellow;
+	background: none;
+}
+input {
+	color: white;
+	background: black;
+	border: none;
+	padding: 0.5rem;
+}
+.msg-info  { background-color: #0000ff; }
+.msg-error { background-color: #7f0000; }
+
+@media screen and (max-width: 650px) {
+	.container {
+		width: 90%;
+		font-size: 1rem;
+	}
+}
+@media screen and (max-width: 1366px) {
+	.container {
+		width: 75%;
+	}
+}
