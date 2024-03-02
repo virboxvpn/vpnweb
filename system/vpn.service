@@ -1,0 +1,16 @@
+[Unit]
+Description=Virbox VPN WSGI
+Requires=vpn.socket
+After=network.target
+[Service]
+User=virbox
+Group=www-data
+WorkingDirectory=/home/virbox/vpnweb/src/
+ExecStart=/home/virbox/venv/bin/gunicorn \
+          --access-logfile /dev/null \
+          --workers 3 \
+          --bind unix:/run/vpn.sock \
+          vpnweb.wsgi:application
+[Install]
+WantedBy=multi-user.target
+

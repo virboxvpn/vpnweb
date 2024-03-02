@@ -1,0 +1,7 @@
+[Unit]
+Description=Virbox VPN WSGI socket
+[Socket]
+ListenStream=/run/vpn.sock
+[Install]
+WantedBy=sockets.target
+
