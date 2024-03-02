@@ -43,8 +43,8 @@ def activate_service(user_id):
     for server in VPNServer.objects.all():
         assert bool(re.match(r'^[a-zA-Z0-9]{8}$', user.username))
         with Connection(host=server.ip, user=server.ssh_user, port=server.ssh_port) as conn:
-            conn.sudo(f"/home/{server.ssh_user}/openvpn-install/add-user.sh '{user.username}'", hide=True)
-            conn.get(f'/home/{server.ssh_user}/{user.username}.ovpn', local=f'{userdir / server.visible_name}.ovpn', hide=True)
+            conn.sudo(f"/home/{server.ssh_user}/openvpn/add-user.sh '{user.username}'", hide=True)
+            conn.get(f'/home/{server.ssh_user}/clients/{user.username}.ovpn', local=f'{userdir / server.visible_name}.ovpn', hide=True)
     shutil.make_archive(settings.VPN_USERZIP / user.username, 'zip', userdir)
     user.status = User.Status.ACTIVE
     user.save()
