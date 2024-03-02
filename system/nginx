@@ -1,0 +1,38 @@
+server {
+    server_name vpn.virbox.net;
+    access_log /dev/null;
+
+    #location = /favicon.ico {
+        #access_log off;
+        #alias /home/virbox/vpnweb/static/icons/favicon.ico;
+    #}
+    location /static/ {
+        root /home/virbox/vpnweb/src/;
+    }
+
+    location / {
+        rewrite ^([^.]*[^/])$ $1/ permanent;
+        include proxy_params;
+        proxy_pass http://unix:/run/vpn.sock;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/vpn.virbox.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/vpn.virbox.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = vpn.virbox.net) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name vpn.virbox.net;
+
+    listen 80;
+    return 404; # managed by Certbot
+
+
+}
