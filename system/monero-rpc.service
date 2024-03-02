@@ -1,0 +1,15 @@
+[Unit]
+Description=Monero Wallet RPC Daemon
+After=network.target
+
+[Service]
+User=virbox
+Group=virbox
+Restart=always
+RestartSec=60
+Type=simple
+ExecStart=/usr/bin/monero-wallet-rpc --config-file /etc/monero.conf
+
+
+[Install]
+WantedBy=multi-user.target

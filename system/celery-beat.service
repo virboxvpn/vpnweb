@@ -1,0 +1,12 @@
+[Unit]
+Description=Celery Beat
+After=network.target
+
+[Service]
+Type=simple
+User=virbox
+WorkingDirectory=/home/virbox/vpnweb/vpnweb
+ExecStart=/home/virbox/venv/bin/celery -A vpnweb beat
+
+[Install]
+WantedBy=multi-user.target
