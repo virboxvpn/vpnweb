@@ -7,9 +7,9 @@ urlpatterns = [
     path("gentoken/", GentokenView.as_view(), name="gentoken"),
     path("login/", LoginView.as_view(), name="login"),
     path("logout/", logout_view, name="logout"),
-    path("coupon/activate/<str:coupon>", CouponView.set, name="coupon-clear"),
+    path("coupon/activate/<str:coupon>/", CouponView.set, name="coupon-clear"),
     path("coupon/clear/", CouponView.clear, name="coupon-clear"),
     path("invoice/", PayView.create, name="invoice-create"),
-    path("invoice/<str:payment_hex>", PayView.get, name="invoice-get"),
+    path("invoice/<str:payment_hex>/", PayView.get, name="invoice-get"),
     path("download/conf/<str:filename>.zip", download_config_view, name="download-conf"),
 ]
