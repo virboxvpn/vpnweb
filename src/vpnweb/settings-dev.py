@@ -163,3 +163,4 @@ MONERO_TX_CONFIRMATIONS = 3
 VPN_USERDIR = Path('/home/virbox/userdir/')
 VPN_USERZIP = Path('/home/virbox/userzip/')
 VPN_INVOICE_EXPIRE_AFTER = timedelta(days=2)
+VPN_ADMIN_PANEL_PREFIX = ''
