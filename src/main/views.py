@@ -58,7 +58,7 @@ class LoginView(View):
         if not ":" in request.POST.get("token"):
             messages.error(
                 request,
-                "Invalid format. Paste your username:password pair, or create new account instead",
+                "Invalid format. Insert your username:password pair, or create new account instead",
             )
             return render(request, self.template_name)
         username, password = request.POST.get("token").split(":", 1)
