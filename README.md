@@ -1,5 +1,4 @@
 # Virbox VPN website
-**Warning: If you can read this message, the website is in testing mode right now.**
 
 Source code behind [vpn.virbox.net](https://vpn.virbox.net), licensed under GNU Affero General Public License.
 
