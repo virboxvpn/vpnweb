@@ -2,7 +2,7 @@
 {% block title %}View invoice{% endblock %}
 {% block content %}
 <h2>Invoice #{{ invoice.payment_id.hex }} for {{ user.username }}</h2>
-<p>To pay: {{ invoice.price_xmr }} XMR</p>
+<p>To pay (XMR): <mark>{{ invoice.price_xmr }}</mark></p>
 <p>Pay to:</p>
 <p><mark>{{ invoice.address }}</mark></p>
 <p>Plan: ${{ invoice.plan.price_usd }} - {{ invoice.plan.days }}</p>
