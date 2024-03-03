@@ -108,7 +108,7 @@ class Plan(models.Model):
             return f"{self.n_days} days"
 
     def __str__(self):
-        return f"Plan #{self.id}: ${self.price_usd} - {self.days}"
+        return f"Plan #{self.id} on '{self.coupon.text}': ${self.price_usd} - {self.days}"
 
 
 class Invoice(models.Model):
