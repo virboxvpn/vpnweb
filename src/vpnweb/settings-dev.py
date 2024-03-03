@@ -156,8 +156,10 @@ CELERY_BEAT_SCHEDULE = {
 
 from monero.wallet import Wallet
 
-MONERO_PORT = 18008
-MONERO_WALLET_ADDR = Wallet(port=MONERO_PORT).address()
+MONERO_RPC_ARGS = {
+    'port': 18008,
+}
+MONERO_WALLET_ADDR = Wallet(**MONERO_RPC_ARGS).address()
 MONERO_TX_CONFIRMATIONS = 3
 
 VPN_USERDIR = Path("/home/virbox/userdir/")

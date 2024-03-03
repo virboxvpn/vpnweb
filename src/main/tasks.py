@@ -11,7 +11,7 @@ from datetime import datetime, timedelta
 
 @celery.shared_task
 def update_invoices():
-    w = Wallet(port=settings.MONERO_PORT)
+    w = Wallet(**settings.MONERO_RPC_ARGS)
     w_addr = w.address()
     # w.refresh()
     unpaid = Invoice.objects.filter(is_paid=False)
