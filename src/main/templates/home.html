@@ -8,7 +8,7 @@
 <p><a href="{% url 'gentoken' %}">Generate new account...</a></p>
 {% endif %}
 
-<p><i>Note: Currently, only Monero (XMR) payments are supported. Read more at <a href="https://getmonero.org" target="_blank">getmonero.org</a></i></p>
+<p><mark>Note: You can get Virbox VPN with a <a href="https://youtube.com/@Virbox/join/">channel membership</a> or by paying in <a href="https://getmonero.org" target="_blank">Monero (XMR)</a>.</mark></p>
 
 <p>The purpose of this project is to let users across the world change their IP. We do not lie about the need for additional security, because there is nothing VPN encrypts that HTTPS doesn't. Use a VPN, if you...</p>
 <ul>
@@ -20,8 +20,16 @@
 <h2>How it works?</h2>
 <p>I believe in open-source software. Many VPN providers share the source code for their client apps. The backend, however, stays closed. In contrast, the full source code of Virbox VPN project is available at <a href="https://github.com/virboxvpn/" target="_blank">GitHub</a>. We use OpenVPN as the VPN server software. WireGuard support is also planned in the future.</p>
 <h2>Payment process</h2>
-<p>You only pay when you want to add balance (amount of days) to the account - no autorecurring subscriptions.</p>
-<p>Currently, we only accept the Monero cryptocurrency. After you login and create an invoice for the selected plan, you will be redirected to the invoice page, which would contain a Monero wallet address integrated with the invoice ID, and XMR amount you should send. The amount is calculated from CoinGecko API at the moment of invoice creation and is fixed afterwards. The invoice is deleted 48 hours after the creation, but you should send the transaction earlier to get 3 confirmations in Monero blockchain and be processed by our server.</p>
+<p>There are two ways:</p>
+<ol>
+	<li><p>Join the <a href="https://youtube.com/@Virbox/join/">Virbox membership</a> on YouTube and receive a coupon to get Virbox VPN for free.</p></li>
+	<li><p>Pay with Monero cryptocurrency.</p></li>
+</ol>
+<h3>YouTube channel membership</h3>
+<p>With the membership coupon, you "buy" the VPN for free and download VPN profiles (for OpenVPN) after your account is activated. Activation happens within 5 minutes.</p>
+<h3>Monero</h3>
+<p>After you login and create an invoice for the selected plan, you will be redirected to the invoice page, which would contain a Monero wallet address integrated with the invoice ID, and XMR amount you should send. The amount is calculated from CoinGecko API at the moment of invoice creation and is fixed afterwards. The invoice is deleted 48 hours after the creation, but you should send the transaction earlier to get 3 confirmations in Monero blockchain and be processed by our server.</p>
 <p>After the payment, within 10 minutes you will be able to download a ZIP archive containing .ovpn profiles for you to use with any OpenVPN client. The link will become available on the account page.</p>
+<p>You only pay when you want to add balance (amount of days) to the account - no autorecurring subscriptions.</p>
 
 {% endblock %}
