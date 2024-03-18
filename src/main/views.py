@@ -77,6 +77,7 @@ def logout_view(request):
     return redirect("/")
 
 
+@login_required
 def account_view(request):
     plans = CouponView.list_plans(request)
 
